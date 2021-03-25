@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int decVal;
+    int quotient;
+    int count;
+    int result;
+    int remain;
+    int digits;
+    
+    printf("Num: ");
+    scanf("%d", &decVal);
+    printf("Digits: ");
+    scanf("%d", &digits);
+  
+    do
+    {
+        quotient = decVal / 8;
+        remain = decVal % 8;
+        result += remain * pow(10,count);
+        decVal = quotient;
+        ++count;
+    }
+    while (count < digits);
+    
+    printf("\nresult: %i", result);
+      
+    return 0;
+}
